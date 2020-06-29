@@ -31,7 +31,10 @@ export const FactionsProvider = ({ children }: { children: ReactNode }) => {
       setBoxes(
         produce(boxes, (draftBoxes) => {
           lsFactions.forEach((lsFaction) => {
-            draftBoxes.find((box) => box.name === lsFaction).selected = true;
+            const toSelectBox = draftBoxes.find(
+              (box) => box.name === lsFaction
+            );
+            if (toSelectBox) toSelectBox.selected = true;
           });
         })
       );
