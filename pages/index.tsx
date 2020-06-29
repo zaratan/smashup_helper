@@ -38,7 +38,7 @@ export default function Home() {
   const isResetButton = chosenFactions.length >= playerCount;
 
   return (
-    <div className="h-screen p-8">
+    <div className="p-8">
       <Head>
         <title>SmashUp Helper</title>
         <link rel="icon" href="/favicon.ico" />
