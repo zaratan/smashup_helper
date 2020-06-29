@@ -2,11 +2,9 @@ import Head from 'next/head';
 import { useState, useContext, useEffect, useCallback } from 'react';
 import shuffle from 'lodash/shuffle';
 
+import { is } from 'immer/dist/internal';
 import FactionsContext from '../contexts/FactionsContext';
-import {
-  generateHandleClick,
-  generateHandleKeypress,
-} from '../helpers/handlers';
+import { generateHandleClick } from '../helpers/handlers';
 
 export default function Home() {
   const { factions, boxes, toggleFaction } = useContext(FactionsContext);
@@ -37,6 +35,8 @@ export default function Home() {
     reset();
   };
 
+  const isResetButton = chosenFactions.length >= playerCount;
+
   return (
     <div className="h-screen p-8">
       <Head>
@@ -59,7 +59,6 @@ export default function Home() {
                     : 'bg-gray-400 p-2 rounded cursor-pointer whitespace-no-wrap w-full'
                 }
                 onClick={generateHandleClick(onClickBox(box.name))}
-                onKeyPress={generateHandleKeypress(onClickBox(box.name))}
                 type="button"
               >
                 {box.name}
@@ -95,21 +94,14 @@ export default function Home() {
           </ul>
         </section>
         <aside className="flex flex-col pt-20">
-          {chosenFactions.length >= playerCount ? (
-            <input
-              type="submit"
-              value="Reset"
-              onClick={reset}
-              className="w-20 cursor-pointer p-1 bg-red-300 rounded"
-            />
-          ) : (
-            <input
-              type="submit"
-              value="Go!"
-              onClick={onClick}
-              className="w-20 cursor-pointer bg-blue-300 p-1 rounded"
-            />
-          )}
+          <input
+            type="submit"
+            value={isResetButton ? 'Reset' : 'Go!'}
+            onClick={isResetButton ? reset : onClick}
+            className={`w-20 cursor-pointer p-1 ${
+              isResetButton ? 'bg-red-300' : 'bg-blue-300'
+            } rounded`}
+          />
         </aside>
       </main>
 
