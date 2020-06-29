@@ -54,7 +54,9 @@ export default function Home() {
               <button
                 key={box.name}
                 className={`${
-                  box.selected ? 'bg-green-400' : 'bg-gray-400'
+                  box.selected
+                    ? 'bg-green-400 hover:bg-green-500 focus:bg-green-500'
+                    : 'bg-gray-400 hover:bg-gray-500 focus:bg-gray-500'
                 } p-2 rounded cursor-pointer whitespace-no-wrap w-full transition duration-200`}
                 onClick={generateHandleClick(onClickBox(box.name))}
                 type="button"
@@ -97,7 +99,9 @@ export default function Home() {
             value={isResetButton ? 'Reset' : 'Go!'}
             onClick={isResetButton ? reset : onClick}
             className={`w-20 cursor-pointer p-1 ${
-              isResetButton ? 'bg-red-300' : 'bg-blue-300'
+              isResetButton
+                ? 'bg-red-300 hover:bg-red-400 focus:bg-red-400'
+                : 'bg-blue-300 hover:bg-blue-400 focus:bg-blue-400'
             } rounded transition duration-200`}
           />
         </aside>
