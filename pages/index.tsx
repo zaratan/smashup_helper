@@ -67,7 +67,7 @@ export default function Home() {
           ))}
         </ul>
       </section>
-      <main className="container h-full mx-auto space-y-1 grid grid-cols-1 gap-8 col-gap-16 sm:grid-flow-col-dense py-5 w-4/5">
+      <main className="container mx-auto space-y-1 grid grid-cols-1 gap-8 col-gap-16 sm:grid-flow-col-dense py-5 w-4/5">
         <section className="">
           <label
             htmlFor="number-player-input"
