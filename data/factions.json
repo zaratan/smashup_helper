@@ -1,0 +1,173 @@
+{
+  "boxes": [
+    {
+      "name": "Base",
+      "factions": [
+        "Alien",
+        "Pirate",
+        "Robot",
+        "Zombie",
+        "Trickster",
+        "Mage",
+        "Dinosaur",
+        "Ninja"
+      ]
+    },
+    {
+      "name": "Big Box: Geeks",
+      "factions": [
+        "Geeks"
+      ]
+    },
+    {
+      "name": "Big Box: All-Stars",
+      "factions": [
+        "All-Stars"
+      ]
+    },
+    {
+      "name": "Awesome Level 9000",
+      "factions": [
+        "Bear Cavalry",
+        "Ghosts",
+        "Killer Plants",
+        "Steampunks"
+      ]
+    },
+    {
+      "name": "The Obligatory Cthulhu Set",
+      "factions": [
+        "Elder Things",
+        "Innsmouth",
+        "Cthulhu Cultists",
+        "Miskatonic University"
+      ]
+    },
+    {
+      "name": "Science Fiction Double Feature",
+      "factions": [
+        "Cyborg Apes",
+        "Shapeshifters",
+        "Super Spies",
+        "Time Travelers"
+      ]
+    },
+    {
+      "name": "Monster Smash",
+      "factions": [
+        "Giant Ants",
+        "Mad Scientists",
+        "Vampires",
+        "Werewolves"
+      ]
+    },
+    {
+      "name": "Pretty Pretty",
+      "factions": [
+        "Fairies",
+        "Kitty Cats",
+        "Mythic Horses",
+        "Princesses"
+      ]
+    },
+    {
+      "name": "Munchkin",
+      "factions": [
+        "Clerics",
+        "Dwarves",
+        "Elves",
+        "Halflings",
+        "Mages",
+        "Orcs",
+        "Thieves",
+        "Warriors"
+      ]
+    },
+    {
+      "name": "It's Your Fault",
+      "factions": [
+        "Dragons",
+        "Mythic Greeks",
+        "Sharks",
+        "Tornadoes",
+        "Superheroes"
+      ]
+    },
+    {
+      "name": "Cease & Desist",
+      "factions": [
+        "Star Roamers",
+        "Astro Knights",
+        "Changerbots",
+        "Ignobles"
+      ]
+    },
+    {
+      "name": "What Were We Thinking",
+      "factions": [
+        "Teddy Bears",
+        "Grandmas",
+        "Rock Stars",
+        "Explorers"
+      ]
+    },
+    {
+      "name": "Big In Japan",
+      "factions": [
+        "Kaiju",
+        "Mystical Girls",
+        "Mega Troopers",
+        "Itty Critters"
+      ]
+    },
+    {
+      "name": "That 70s Expansion",
+      "factions": [
+        "Truckers",
+        "Disco Dancers",
+        "Vigilantes",
+        "Kung Fu Fighters"
+      ]
+    },
+    {
+      "name": "Oops You Did It Again",
+      "factions": [
+        "Vikings",
+        "Cowboys",
+        "Ancient Egyptians",
+        "Samurai"
+      ]
+    },
+    {
+      "name": "World Tour Part 1",
+      "factions": [
+        "Luchadors",
+        "Mounties",
+        "Musketeers",
+        "Sumo Wrestlers"
+      ]
+    },
+    {
+      "name": "World Tour Part 2",
+      "factions": [
+        "Russia",
+        "West Africa",
+        "Germany",
+        "Inca",
+        "Polynesia"
+      ]
+    },
+    {
+      "name": "Promo: Sheep",
+      "factions": [
+        "Sheep"
+      ]
+    },
+    {
+      "name": "Promo: Penguins",
+      "factions": [
+        "Penguins"
+      ]
+    }
+  ]
+}

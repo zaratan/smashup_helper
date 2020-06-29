@@ -1,0 +1,119 @@
+import Head from 'next/head';
+import { useState, useContext, useEffect, useCallback } from 'react';
+import shuffle from 'lodash/shuffle';
+
+import FactionsContext from '../contexts/FactionsContext';
+import {
+  generateHandleClick,
+  generateHandleKeypress,
+} from '../helpers/handlers';
+
+export default function Home() {
+  const { factions, boxes, toggleFaction } = useContext(FactionsContext);
+  const [playerCount, setPlayerCount] = useState(2);
+  const [chosenFactions, setChosenFactions] = useState([]);
+  const [leftFactions, setLeftFactions] = useState(shuffle([...factions]));
+
+  const onClick = () => {
+    const tmpLeftFactions = [...leftFactions];
+    setChosenFactions([
+      ...chosenFactions,
+      [tmpLeftFactions.pop(), tmpLeftFactions.pop()],
+    ]);
+    setLeftFactions(tmpLeftFactions);
+  };
+
+  const reset = useCallback(() => {
+    setChosenFactions([]);
+    setLeftFactions(shuffle([...factions]));
+  }, [factions]);
+
+  useEffect(() => {
+    reset();
+  }, [reset]);
+
+  const onClickBox = (name: string) => () => {
+    toggleFaction(name);
+    reset();
+  };
+
+  return (
+    <div className="h-screen p-8">
+      <Head>
+        <title>SmashUp Helper</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <header className="text-center text-5xl pb-6">
+        <h1>Faction Randomizer</h1>
+      </header>
+      <section className="pb-4">
+        <h2 className="text-center text-3xl pb-2">Boxes</h2>
+        <ul className="grid gap-2 grid-flow-row-dense grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 max-w-screen-lg mx-auto justify-center">
+          {boxes.map((box) => (
+            <li className="">
+              <button
+                key={box.name}
+                className={
+                  box.selected
+                    ? 'bg-green-400 p-2 rounded cursor-pointer whitespace-no-wrap w-full'
+                    : 'bg-gray-400 p-2 rounded cursor-pointer whitespace-no-wrap w-full'
+                }
+                onClick={generateHandleClick(onClickBox(box.name))}
+                onKeyPress={generateHandleKeypress(onClickBox(box.name))}
+                type="button"
+              >
+                {box.name}
+              </button>
+            </li>
+          ))}
+        </ul>
+      </section>
+      <main className="container h-full mx-auto space-y-1 grid grid-cols-1 gap-8 col-gap-16 sm:grid-flow-col-dense py-5 w-4/5">
+        <section className="">
+          <label
+            htmlFor="number-player-input"
+            className="my-5 border-b w-full py-5 flex justify-between items-baseline"
+          >
+            Number of players :
+            <input
+              type="number"
+              min={2}
+              max={6}
+              id="number-player-input"
+              placeholder="Number of player"
+              value={playerCount}
+              onChange={(e) => setPlayerCount(Number(e.target.value))}
+              className="w-1/2 border border-solid border-gray-300 rounded p-1"
+            />
+          </label>
+          <ul className="space-y-2">
+            {chosenFactions.map((playerFactions) => (
+              <li>
+                {playerFactions[0]} - {playerFactions[1]}
+              </li>
+            ))}
+          </ul>
+        </section>
+        <aside className="flex flex-col pt-20">
+          {chosenFactions.length >= playerCount ? (
+            <input
+              type="submit"
+              value="Reset"
+              onClick={reset}
+              className="w-20 cursor-pointer p-1 bg-red-300 rounded"
+            />
+          ) : (
+            <input
+              type="submit"
+              value="Go!"
+              onClick={onClick}
+              className="w-20 cursor-pointer bg-blue-300 p-1 rounded"
+            />
+          )}
+        </aside>
+      </main>
+
+      <footer />
+    </div>
+  );
+}
