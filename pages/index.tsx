@@ -53,11 +53,9 @@ export default function Home() {
             <li className="">
               <button
                 key={box.name}
-                className={
-                  box.selected
-                    ? 'bg-green-400 p-2 rounded cursor-pointer whitespace-no-wrap w-full'
-                    : 'bg-gray-400 p-2 rounded cursor-pointer whitespace-no-wrap w-full'
-                }
+                className={`${
+                  box.selected ? 'bg-green-400' : 'bg-gray-400'
+                } p-2 rounded cursor-pointer whitespace-no-wrap w-full transition duration-200`}
                 onClick={generateHandleClick(onClickBox(box.name))}
                 type="button"
               >
@@ -100,7 +98,7 @@ export default function Home() {
             onClick={isResetButton ? reset : onClick}
             className={`w-20 cursor-pointer p-1 ${
               isResetButton ? 'bg-red-300' : 'bg-blue-300'
-            } rounded`}
+            } rounded transition duration-200`}
           />
         </aside>
       </main>
