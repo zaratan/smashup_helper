@@ -124,7 +124,7 @@ export default function Home() {
                 type="submit"
                 value={isResetButton ? 'Reset' : 'Go!'}
                 onClick={isResetButton ? reset : onClick}
-                className={`w-full sm:w-40 cursor-pointer p-1 ${
+                className={`w-full sm:w-40 cursor-pointer p-2 ${
                   isResetButton
                     ? 'bg-red-300 hover:bg-red-400 focus:bg-red-400 dark:bg-red-700 dark:hover:bg-red-600 dark:focus:bg-red-600'
                     : 'bg-blue-300 hover:bg-blue-400 focus:bg-blue-400 dark:bg-blue-700 dark:hover:bg-blue-600 dark:focus:bg-blue-600'
