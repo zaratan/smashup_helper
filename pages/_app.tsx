@@ -3,12 +3,15 @@ import { AppProps } from 'next/app';
 
 import '../styles/main.css';
 import { FactionsProvider } from '../contexts/FactionsContext';
+import { OptionsProvider } from '../contexts/OptionsContext';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <FactionsProvider>
-      <Component {...pageProps} />
-    </FactionsProvider>
+    <OptionsProvider>
+      <FactionsProvider>
+        <Component {...pageProps} />
+      </FactionsProvider>
+    </OptionsProvider>
   );
 }
 

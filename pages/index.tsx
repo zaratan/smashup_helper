@@ -4,18 +4,24 @@ import shuffle from 'lodash/shuffle';
 
 import FactionsContext from '../contexts/FactionsContext';
 import { generateHandleClick } from '../helpers/handlers';
+import OptionsContext from '../contexts/OptionsContext';
 
 export default function Home() {
   const { factions, boxes, toggleFaction } = useContext(FactionsContext);
   const [playerCount, setPlayerCount] = useState(2);
   const [chosenFactions, setChosenFactions] = useState([]);
   const [leftFactions, setLeftFactions] = useState(shuffle([...factions]));
+  const { bestOfThree, toggleBestOfThree } = useContext(OptionsContext);
 
   const onClick = () => {
     const tmpLeftFactions = [...leftFactions];
     setChosenFactions([
       ...chosenFactions,
-      [tmpLeftFactions.pop(), tmpLeftFactions.pop()],
+      [
+        tmpLeftFactions.pop(),
+        tmpLeftFactions.pop(),
+        bestOfThree ? tmpLeftFactions.pop() : null,
+      ].filter((e) => e),
     ]);
     setLeftFactions(tmpLeftFactions);
   };
@@ -84,10 +90,22 @@ export default function Home() {
               className="w-1/2 border border-solid border-gray-300 rounded p-1"
             />
           </label>
+          <label
+            htmlFor="options-best-of-three"
+            className="my-5 border-b w-full py-5 flex justify-between items-baseline"
+          >
+            Draw 3 factions :
+            <input
+              type="checkbox"
+              id="options-best-of-three"
+              checked={bestOfThree}
+              onChange={() => toggleBestOfThree()}
+            />
+          </label>
           <ul className="space-y-2">
             {chosenFactions.map((playerFactions) => (
               <li key={playerFactions.join(',')}>
-                {playerFactions[0]} - {playerFactions[1]}
+                {playerFactions.join(' - ')}
               </li>
             ))}
           </ul>
