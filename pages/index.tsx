@@ -2,7 +2,6 @@ import Head from 'next/head';
 import { useState, useContext, useEffect, useCallback } from 'react';
 import shuffle from 'lodash/shuffle';
 
-import { is } from 'immer/dist/internal';
 import FactionsContext from '../contexts/FactionsContext';
 import { generateHandleClick } from '../helpers/handlers';
 
@@ -50,13 +49,13 @@ export default function Home() {
         <h2 className="text-center text-3xl pb-2">Boxes</h2>
         <ul className="grid gap-2 grid-flow-row-dense grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 max-w-screen-lg mx-auto justify-center">
           {boxes.map((box) => (
-            <li className="">
+            <li className="" key={box.name}>
               <button
                 key={box.name}
                 className={`${
                   box.selected
-                    ? 'bg-green-400 hover:bg-green-500 focus:bg-green-500'
-                    : 'bg-gray-400 hover:bg-gray-500 focus:bg-gray-500'
+                    ? 'bg-green-300 hover:bg-green-400 focus:bg-green-400  transition-colors'
+                    : 'bg-gray-200 hover:bg-gray-300 focus:bg-gray-300 transition-colors'
                 } p-2 rounded cursor-pointer whitespace-no-wrap w-full transition duration-200`}
                 onClick={generateHandleClick(onClickBox(box.name))}
                 type="button"
@@ -87,7 +86,7 @@ export default function Home() {
           </label>
           <ul className="space-y-2">
             {chosenFactions.map((playerFactions) => (
-              <li>
+              <li key={playerFactions.join(',')}>
                 {playerFactions[0]} - {playerFactions[1]}
               </li>
             ))}

@@ -15,24 +15,15 @@
     },
     {
       "name": "Big Box: Geeks",
-      "factions": [
-        "Geeks"
-      ]
+      "factions": ["Geeks"]
     },
     {
       "name": "Big Box: All-Stars",
-      "factions": [
-        "All-Stars"
-      ]
+      "factions": ["All-Stars"]
     },
     {
       "name": "Awesome Level 9000",
-      "factions": [
-        "Bear Cavalry",
-        "Ghosts",
-        "Killer Plants",
-        "Steampunks"
-      ]
+      "factions": ["Bear Cavalry", "Ghosts", "Killer Plants", "Steampunks"]
     },
     {
       "name": "The Obligatory Cthulhu Set",
@@ -54,21 +45,11 @@
     },
     {
       "name": "Monster Smash",
-      "factions": [
-        "Giant Ants",
-        "Mad Scientists",
-        "Vampires",
-        "Werewolves"
-      ]
+      "factions": ["Giant Ants", "Mad Scientists", "Vampires", "Werewolves"]
     },
     {
       "name": "Pretty Pretty",
-      "factions": [
-        "Fairies",
-        "Kitty Cats",
-        "Mythic Horses",
-        "Princesses"
-      ]
+      "factions": ["Fairies", "Kitty Cats", "Mythic Horses", "Princesses"]
     },
     {
       "name": "Munchkin",
@@ -95,30 +76,15 @@
     },
     {
       "name": "Cease & Desist",
-      "factions": [
-        "Star Roamers",
-        "Astro Knights",
-        "Changerbots",
-        "Ignobles"
-      ]
+      "factions": ["Star Roamers", "Astro Knights", "Changerbots", "Ignobles"]
     },
     {
       "name": "What Were We Thinking",
-      "factions": [
-        "Teddy Bears",
-        "Grandmas",
-        "Rock Stars",
-        "Explorers"
-      ]
+      "factions": ["Teddy Bears", "Grandmas", "Rock Stars", "Explorers"]
     },
     {
       "name": "Big In Japan",
-      "factions": [
-        "Kaiju",
-        "Mystical Girls",
-        "Mega Troopers",
-        "Itty Critters"
-      ]
+      "factions": ["Kaiju", "Magical Girls", "Mega Troopers", "Itty Critters"]
     },
     {
       "name": "That 70s Expansion",
@@ -131,43 +97,27 @@
     },
     {
       "name": "Oops You Did It Again",
-      "factions": [
-        "Vikings",
-        "Cowboys",
-        "Ancient Egyptians",
-        "Samurai"
-      ]
+      "factions": ["Vikings", "Cowboys", "Ancient Egyptians", "Samurai"]
     },
     {
       "name": "World Tour Part 1",
-      "factions": [
-        "Luchadors",
-        "Mounties",
-        "Musketeers",
-        "Sumo Wrestlers"
-      ]
+      "factions": ["Luchadors", "Mounties", "Musketeers", "Sumo Wrestlers"]
     },
     {
       "name": "World Tour Part 2",
-      "factions": [
-        "Russia",
-        "West Africa",
-        "Germany",
-        "Inca",
-        "Polynesia"
-      ]
+      "factions": ["Russia", "West Africa", "Germany", "Inca", "Polynesia"]
     },
     {
       "name": "Promo: Sheep",
-      "factions": [
-        "Sheep"
-      ]
+      "factions": ["Sheep"]
     },
     {
       "name": "Promo: Penguins",
-      "factions": [
-        "Penguins"
-      ]
+      "factions": ["Penguins"]
+    },
+    {
+      "name": "Promo: Goblins",
+      "factions": ["Goblins"]
     }
   ]
 }
