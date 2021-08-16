@@ -4,14 +4,17 @@ import { AppProps } from 'next/app';
 import '../styles/main.css';
 import { FactionsProvider } from '../contexts/FactionsContext';
 import { OptionsProvider } from '../contexts/OptionsContext';
+import { ThemeProvider } from '../contexts/ThemeContext';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <OptionsProvider>
-      <FactionsProvider>
-        <Component {...pageProps} />
-      </FactionsProvider>
-    </OptionsProvider>
+    <ThemeProvider>
+      <OptionsProvider>
+        <FactionsProvider>
+          <Component {...pageProps} />
+        </FactionsProvider>
+      </OptionsProvider>
+    </ThemeProvider>
   );
 }
 

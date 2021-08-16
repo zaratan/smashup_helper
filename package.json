@@ -10,6 +10,8 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@headlessui/react": "^1.4.0",
+    "@heroicons/react": "^1.0.3",
     "immer": "^9.0.5",
     "lodash": "^4.17.21",
     "next": "11.1.0",

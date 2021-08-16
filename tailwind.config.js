@@ -7,8 +7,8 @@ const plugin = require('tailwindcss/plugin');
 
 module.exports = {
   purge: ['./{pages,components,styles}/**/*.{js,ts,jsx,tsx}'],
-  // mode: 'jit',
-  darkMode: false, // or 'media' or 'class'
+  mode: 'jit',
+  darkMode: 'class', // or 'media' or 'class'
   theme: {
     extend: {
       transitionDuration: {
