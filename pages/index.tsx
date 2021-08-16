@@ -92,12 +92,12 @@ export default function Home() {
             ))}
           </ul>
         </section>
-        <aside className="flex flex-col pt-20">
+        <aside className="sm:pt-20">
           <input
             type="submit"
             value={isResetButton ? 'Reset' : 'Go!'}
             onClick={isResetButton ? reset : onClick}
-            className={`w-20 cursor-pointer p-1 ${
+            className={`w-full sm:w-20 cursor-pointer p-1 ${
               isResetButton
                 ? 'bg-red-300 hover:bg-red-400 focus:bg-red-400'
                 : 'bg-blue-300 hover:bg-blue-400 focus:bg-blue-400'
