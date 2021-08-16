@@ -11,6 +11,7 @@ export default function Home() {
   const [playerCount, setPlayerCount] = useState(2);
   const [chosenFactions, setChosenFactions] = useState([]);
   const [leftFactions, setLeftFactions] = useState(shuffle([...factions]));
+  const [genId, setGenId] = useState(0);
   const { bestOfThree, toggleBestOfThree } = useContext(OptionsContext);
 
   const onClick = () => {
@@ -26,14 +27,12 @@ export default function Home() {
     setLeftFactions(tmpLeftFactions);
   };
 
-  const reset = useCallback(() => {
-    setChosenFactions([]);
-    setLeftFactions(shuffle([...factions]));
-  }, [factions]);
+  const reset = () => setGenId(Math.random());
 
   useEffect(() => {
-    reset();
-  }, [reset]);
+    setChosenFactions([]);
+    setLeftFactions(shuffle([...factions]));
+  }, [factions, bestOfThree, genId]);
 
   const onClickBox = (name: string) => () => {
     toggleFaction(name);
@@ -60,8 +59,8 @@ export default function Home() {
                 key={box.name}
                 className={`${
                   box.selected
-                    ? 'bg-green-300 hover:bg-green-400 focus:bg-green-400  transition-colors'
-                    : 'bg-gray-200 hover:bg-gray-300 focus:bg-gray-300 transition-colors'
+                    ? 'bg-green-300 hover:bg-green-400 focus:bg-green-400'
+                    : 'bg-gray-200 hover:bg-gray-300 focus:bg-gray-300'
                 } p-2 rounded cursor-pointer whitespace-no-wrap w-full transition duration-200`}
                 onClick={generateHandleClick(onClickBox(box.name))}
                 type="button"
@@ -103,11 +102,13 @@ export default function Home() {
             />
           </label>
           <ul className="space-y-2">
-            {chosenFactions.map((playerFactions) => (
-              <li key={playerFactions.join(',')}>
-                {playerFactions.join(' - ')}
-              </li>
-            ))}
+            {chosenFactions.map((playerFactions, count) =>
+              count < playerCount ? (
+                <li key={playerFactions.join(',')}>
+                  {playerFactions.join(' - ')}
+                </li>
+              ) : null
+            )}
           </ul>
         </section>
         <aside className="sm:pt-20">
