@@ -16,7 +16,6 @@ export default function Home() {
   const [leftFactions, setLeftFactions] = useState(shuffle([...factions]));
   const [genId, setGenId] = useState(0);
   const { bestOfThree, toggleBestOfThree } = useContext(OptionsContext);
-  const { darkMode } = useContext(ThemeContext);
 
   const onClick = () => {
     const tmpLeftFactions = [...leftFactions];
@@ -46,16 +45,15 @@ export default function Home() {
   const isResetButton = chosenFactions.length >= playerCount;
 
   return (
-    <div className={classNames(darkMode && 'dark')}>
-      <div className="p-8 dark:bg-gray-800 min-h-screen dark:text-gray-200 flex flex-col justify-between">
+    <div className={classNames('min-h-full flex flex-col justify-start')}>
+      <div className="p-8 dark:bg-gray-800 min-h-full h-full dark:text-gray-200 flex flex-col justify-between flex-grow">
         <Head>
           <title>SmashUp Helper</title>
           <link rel="icon" href="/favicon.ico" />
         </Head>
-        <header className="text-5xl pb-6 flex justify-between w-full max-w-screen-2xl flex-col sm:flex-row">
-          <span />
-          <h1>Faction Randomizer</h1>
-          <LightToggle className="self-end sm:pr-4" />
+        <header className="text-5xl pb-6 flex justify-center w-full max-w-screen-2xl flex-col sm:flex-row mx-auto relative">
+          <h1 className="self-center">Faction Randomizer</h1>
+          <LightToggle className="self-end sm:pr-4 !absolute right-4" />
         </header>
         <main className="flex-grow">
           <section className="pb-4">
