@@ -3,14 +3,13 @@ import { useState, useContext, useEffect } from 'react';
 import shuffle from 'lodash/shuffle';
 
 import FactionsContext from '../contexts/FactionsContext';
-import { generateHandleClick } from '../helpers/handlers';
 import OptionsContext from '../contexts/OptionsContext';
-import ThemeContext from '../contexts/ThemeContext';
 import { classNames } from '../helpers/cssClasses';
 import LightToggle from '../components/LightToggle';
+import Box from '../components/Box';
 
 export default function Home() {
-  const { factions, boxes, toggleFaction } = useContext(FactionsContext);
+  const { factions, boxes } = useContext(FactionsContext);
   const [playerCount, setPlayerCount] = useState(2);
   const [chosenFactions, setChosenFactions] = useState([]);
   const [leftFactions, setLeftFactions] = useState(shuffle([...factions]));
@@ -37,11 +36,6 @@ export default function Home() {
     setLeftFactions(shuffle([...factions]));
   }, [factions, bestOfThree, genId]);
 
-  const onClickBox = (name: string) => () => {
-    toggleFaction(name);
-    reset();
-  };
-
   const isResetButton = chosenFactions.length >= playerCount;
 
   return (
@@ -60,20 +54,7 @@ export default function Home() {
             <h2 className="text-center text-3xl pb-2">Boxes</h2>
             <ul className="grid gap-2 grid-flow-row-dense grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 max-w-screen-lg mx-auto justify-center">
               {boxes.map((box) => (
-                <li className="" key={box.name}>
-                  <button
-                    key={box.name}
-                    className={`${
-                      box.selected
-                        ? 'bg-green-300 hover:bg-green-400 focus:bg-green-400 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:bg-green-700'
-                        : 'bg-gray-200 hover:bg-gray-300 focus:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:bg-gray-600'
-                    } p-2 rounded cursor-pointer whitespace-no-wrap w-full transition duration-200`}
-                    onClick={generateHandleClick(onClickBox(box.name))}
-                    type="button"
-                  >
-                    {box.name}
-                  </button>
-                </li>
+                <Box box={box} reset={reset} key={box.name} />
               ))}
             </ul>
           </section>
@@ -105,6 +86,7 @@ export default function Home() {
                   id="options-best-of-three"
                   checked={bestOfThree}
                   onChange={() => toggleBestOfThree()}
+                  className="cursor-pointer"
                 />
               </label>
               <ul className="space-y-2">

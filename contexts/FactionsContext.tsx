@@ -4,9 +4,16 @@ import produce from 'immer';
 
 import FACTIONS from '../data/factions.json';
 
+export type BoxType = {
+  name: string;
+  factions: Array<string>;
+  selected: boolean;
+  image?: string;
+};
+
 type ContextType = {
   factions: Array<string>;
-  boxes: Array<{ name: string; factions: Array<string>; selected: boolean }>;
+  boxes: Array<BoxType>;
   toggleFaction: (name: string) => void;
 };
 
