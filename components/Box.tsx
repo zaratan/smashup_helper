@@ -30,7 +30,6 @@ function Box({ box, reset }: { box: BoxType; reset: () => void }) {
             alt={`Image for ${box.name} box`}
             height={80}
             width={80}
-            placeholder="blur"
             quality={50}
           />
         ) : null}
