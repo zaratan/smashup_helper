@@ -12,22 +12,22 @@
         "Dinosaur",
         "Ninja"
       ],
-      "image": "base.webp"
+      "image": "base"
     },
     {
       "name": "Big Box: Geeks",
       "factions": ["Geeks"],
-      "image": "bigbox.webp"
+      "image": "bigbox"
     },
     {
       "name": "Bigger Box: All-Stars",
       "factions": ["All-Stars"],
-      "image": "biggerbox.webp"
+      "image": "biggerbox"
     },
     {
       "name": "Awesome Level 9000",
       "factions": ["Bear Cavalry", "Ghosts", "Killer Plants", "Steampunks"],
-      "image": "awesomelevel9000.webp"
+      "image": "awesomelevel9000"
     },
     {
       "name": "The Obligatory Cthulhu Set",
@@ -37,7 +37,7 @@
         "Cthulhu Cultists",
         "Miskatonic University"
       ],
-      "image": "obligatorycthulhu.webp"
+      "image": "obligatorycthulhu"
     },
     {
       "name": "Science Fiction Double Feature",
@@ -47,17 +47,17 @@
         "Super Spies",
         "Time Travelers"
       ],
-      "image": "sciencefiction.webp"
+      "image": "sciencefiction"
     },
     {
       "name": "Monster Smash",
       "factions": ["Giant Ants", "Mad Scientists", "Vampires", "Werewolves"],
-      "image": "monstersmash.webp"
+      "image": "monstersmash"
     },
     {
       "name": "Pretty Pretty",
       "factions": ["Fairies", "Kitty Cats", "Mythic Horses", "Princesses"],
-      "image": "prettypretty.webp"
+      "image": "prettypretty"
     },
     {
       "name": "Munchkin",
@@ -71,7 +71,7 @@
         "Thieves",
         "Warriors"
       ],
-      "image": "munchkin.webp"
+      "image": "munchkin"
     },
     {
       "name": "It's Your Fault",
@@ -82,22 +82,22 @@
         "Tornadoes",
         "Superheroes"
       ],
-      "image": "itsyourfault.webp"
+      "image": "itsyourfault"
     },
     {
       "name": "Cease & Desist",
       "factions": ["Star Roamers", "Astro Knights", "Changerbots", "Ignobles"],
-      "image": "ceasedesist.webp"
+      "image": "ceasedesist"
     },
     {
       "name": "What Were We Thinking",
       "factions": ["Teddy Bears", "Grandmas", "Rock Stars", "Explorers"],
-      "image": "whatwerewethinking.webp"
+      "image": "whatwerewethinking"
     },
     {
       "name": "Big In Japan",
       "factions": ["Kaiju", "Magical Girls", "Mega Troopers", "Itty Critters"],
-      "image": "biginjapan.webp"
+      "image": "biginjapan"
     },
     {
       "name": "That 70s Expansion",
@@ -107,37 +107,37 @@
         "Vigilantes",
         "Kung Fu Fighters"
       ],
-      "image": "that70sexpansion.webp"
+      "image": "that70sexpansion"
     },
     {
       "name": "Oops You Did It Again",
       "factions": ["Vikings", "Cowboys", "Ancient Egyptians", "Samurai"],
-      "image": "oopsyoudiditagain.webp"
+      "image": "oopsyoudiditagain"
     },
     {
       "name": "World Tour Part 1",
       "factions": ["Luchadors", "Mounties", "Musketeers", "Sumo Wrestlers"],
-      "image": "worldtour1.webp"
+      "image": "worldtour1"
     },
     {
       "name": "World Tour Part 2",
       "factions": ["Russia", "West Africa", "Germany", "Inca", "Polynesia"],
-      "image": "worldtour2.webp"
+      "image": "worldtour2"
     },
     {
       "name": "Promo: Sheep",
       "factions": ["Sheep"],
-      "image": "sheep.webp"
+      "image": "sheep"
     },
     {
       "name": "Promo: Penguins",
       "factions": ["Penguins"],
-      "image": "penguins.webp"
+      "image": "penguins"
     },
     {
       "name": "Promo: Goblins",
       "factions": ["Goblins"],
-      "image": "goblins.webp"
+      "image": "goblins"
     }
   ]
 }

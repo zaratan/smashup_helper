@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import Image from 'next/image';
 import FactionsContext, { BoxType } from '../contexts/FactionsContext';
 import { generateHandleClick } from '../helpers/handlers';
+import images from '../data/images';
 
 function Box({ box, reset }: { box: BoxType; reset: () => void }) {
   const { toggleFaction } = useContext(FactionsContext);
@@ -25,10 +26,12 @@ function Box({ box, reset }: { box: BoxType; reset: () => void }) {
       >
         {box.image ? (
           <Image
-            src={`/images/${box.image}`}
+            src={images[box.image]}
             alt={`Image for ${box.name} box`}
             height={80}
             width={80}
+            placeholder="blur"
+            quality={50}
           />
         ) : null}
         <span>{box.name}</span>
